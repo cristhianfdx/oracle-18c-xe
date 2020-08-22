@@ -17,7 +17,7 @@ if [ ! -d "~/docker-services" ]; then
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
-    cat ./aliases >> ~./bashrc
+    cat aliases >> ~./bashrc
 fi
 
 if [ ! -d $downloads_folder ]; then
