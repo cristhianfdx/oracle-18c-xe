@@ -30,7 +30,4 @@ docker-compose logs -f
 
 echo "alias oraclestart='sh -c "docker start oracledb"" >> ~/.bashrc
 echo "alias oraclestop='sh -c "docker start oracledb"" >> ~/.bashrc
-
-
-
-
+echo "alias oracletablespaces='sh -c "docker exec  oracledb sh -c "ls /home/oracle/tablespaces""'" >> ~/.bashrc
