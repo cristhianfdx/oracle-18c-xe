@@ -7,4 +7,4 @@
 
 ## Run container
 
-`docker-compose up -d --build`
+`./install.sh`
