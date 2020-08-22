@@ -1,3 +1,7 @@
+# !/bin/bash
+# Program to install Oracle Database services with docker
+# Author: Cristhian Forero
+
 echo "-------------------------------"
 echo "Oracle 18c-XE DATABASE INSTALL"
 echo "-------------------------------"
