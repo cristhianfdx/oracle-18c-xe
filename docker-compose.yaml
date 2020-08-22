@@ -10,7 +10,6 @@ services:
       - '35518:5500'
     volumes:
       - ~/docker-services/oracle/18c-xe:/opt/oracle/oradata
-      - ~/docker-services/oracle/tablespaces:/home/oracle
     environment:
       - ORACLE_PASSWORD=mypassword
     networks:

@@ -87,3 +87,4 @@ $RECYCLE.BIN/
 *.rpm
 *.zip
 tmp
+tablespaces
