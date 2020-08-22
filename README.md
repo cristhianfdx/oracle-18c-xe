@@ -13,6 +13,12 @@
 
 - Execute `./install.sh`
 
+### Available commands
+
+- Run container `oraclestart` 
+- Stop container `oraclestop` 
+- Run sqlplus `sqlplus`
+
 ### SQL
 
 -- Connect to CDB
