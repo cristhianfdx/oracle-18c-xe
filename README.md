@@ -18,7 +18,7 @@
 - Run container: `oraclestart`
 - Stop container: `oraclestop`
 - Run sqlplus: `sqlplus`
-- List the tablespaces created in the `/home/oracle/tablespaces` path of the container: `oracletablespaces`
+- List the tablespaces created in the `/home/oracle` path of the container: `oracletablespaces`
 
 ### SQL
 

@@ -1,0 +1,4 @@
+alias sqlplus='sh -c "~/docker-services/oracle/sqlcl/bin/sql"'
+alias oraclestart='sh -c "docker start oracledb"'
+alias oraclestop='sh -c "docker stop oracledb"'
+alias oracletablespaces='docker exec oracledb sh -c "ls /home/oracle"'

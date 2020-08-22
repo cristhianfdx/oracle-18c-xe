@@ -31,11 +31,9 @@ RUN chmod a+x ${ORACLE_BASE}/scripts/*.sh
 # 5500: Oracle Enterprise Manager (EM) Express listener.
 EXPOSE 1521 5500
 
-RUN mkdir -p /home/oracle/tablespaces
-
 VOLUME [ "${ORACLE_BASE}/oradata" ]
 
-VOLUME [ "/home/oracle/tablespaces" ]
+VOLUME [ "/home/oracle" ]
 
 HEALTHCHECK --interval=1m --start-period=2m --retries=10 \
   CMD "$ORACLE_BASE/scripts/$CHECK_DB_FILE"

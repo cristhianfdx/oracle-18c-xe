@@ -17,7 +17,7 @@ if [ ! -d "~/docker-services" ]; then
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
-    echo "alias sqlplus='sh -c "~/docker-services/oracle/sqlcl/bin/sql"'" >> ~/.bashrc
+    cat ./aliases >> ~./bashrc
 fi
 
 if [ ! -d $downloads_folder ]; then
@@ -27,10 +27,6 @@ fi
 if [ ! -f $PWD/18c-xe/files/$installer_file ]; then
     mv $downloads_folder/$installer_file $PWD/18c-xe/files/
 fi
-
-echo 'alias oraclestart="sh -c "docker start oracledb"' >> ~/.bashrc
-echo 'alias oraclestop="sh -c "docker start oracledb""' >> ~/.bashrc
-echo 'alias oracletablespaces="sh -c "docker exec  oracledb sh -c "ls /home/oracle/tablespaces""' >> ~/.bashrc
 
 docker-compose up -d --build
 
