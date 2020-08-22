@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  oracledb:
+    build:
+      context: ./18c-xe
+    container_name: oracledb
+    ports:
+      - '1521:1521'
+      - '35518:5500'
+    volumes:
+      - ~/docker/oracle/18c-xe:/opt/oracle/oradata
+      - ~/docker/oracle/tablespaces:/home/oracle/tablespaces
+    environment:
+      - ORACLE_PASSWORD=7tXvhyoRXEtZnDGF
+    networks:
+      - oracle_network
+
+networks:
+  oracle_network: {}
