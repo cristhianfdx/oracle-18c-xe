@@ -24,10 +24,10 @@ if [ ! -f $PWD/18c-xe/files/$installer_file ]; then
     mv $downloads_folder/$installer_file $PWD/18c-xe/files/
 fi
 
-docker-compose up -d --build
-
-docker-compose logs -f
-
 echo "alias oraclestart='sh -c "docker start oracledb"" >> ~/.bashrc
 echo "alias oraclestop='sh -c "docker start oracledb"" >> ~/.bashrc
 echo "alias oracletablespaces='sh -c "docker exec  oracledb sh -c "ls /home/oracle/tablespaces""'" >> ~/.bashrc
+
+docker-compose up -d --build
+
+docker-compose logs -f
