@@ -10,6 +10,9 @@
 
 - Execute `./install.sh`
 
+## Container settings
+
+- To change the password, modify the `ORACLE_PASSWORD` environment variable in the `docker-compose.yaml` file.
 
 
 ### SQL
