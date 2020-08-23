@@ -19,7 +19,7 @@ if [ ! -d "~/docker-services" ]; then
     
     cat aliases >> ~/.bashrc
     
-    if [-f "~/.zshrc"]; then
+    if [ -f "~/.zshrc" ]; then
         cat aliases >> ~/.zshrc
     fi
 fi
