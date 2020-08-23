@@ -50,7 +50,7 @@ $ORACLE_HOME/bin/lsnrctl stop
 $ORACLE_HOME/bin/lsnrctl start
 ```
 
-### OEM
+### Oracle Enterprise Manager
 
 _Note: Flash is required_</br>
 
