@@ -6,7 +6,7 @@ echo "-------------------------------"
 echo "Oracle 18c-XE DATABASE INSTALL"
 echo "-------------------------------"
 
-downloads_folder=~/Downloads
+downloads_folder="~/Downloads"
 installer_file="oracle-database-xe-18c-1.0-1.x86_64.rpm"
 
 if [ ! -d "~/docker-services" ]; then
@@ -16,16 +16,16 @@ if [ ! -d "~/docker-services" ]; then
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
-    
+
     cat aliases >> ~/.bashrc
-    
+
     if [ -f "~/.zshrc" ]; then
         cat aliases >> ~/.zshrc
     fi
 fi
 
 if [ ! -d $downloads_folder ]; then
-    downloads_folder =~/Descargas
+    downloads_folder = "~/Descargas"
 fi
 
 if [ ! -f $PWD/18c-xe/files/$installer_file ]; then

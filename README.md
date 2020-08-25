@@ -58,4 +58,7 @@ _Note: Flash is required_</br>
 
 https://localhost:35518/em
 
+### Uninstall Container
+
+Execute `./uninstall.sh`
 
