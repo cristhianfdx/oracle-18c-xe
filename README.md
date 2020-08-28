@@ -3,7 +3,8 @@
 ## Prerequisites
 
 - [Download](https://drive.google.com/file/d/1P4tGL1IJq_NPtlZs8KvX_nxCbWeYkkvI/view?usp=sharing) the RPM from Oracle Technology Network and     save to folder. We will assume it is in `~/Downloads/oracle-database-xe-18c-1.0-1.x86_64.rpm`.
-- Install [Docker](https://docs.docker.com/engine/install/) and [Docker compose](https://docs.docker.com/compose/install/)
+- Install [Docker](https://docs.docker.com/engine/install/) (Windows - Install Docker Desktop and activate Linux containers)
+- Install [Docker compose](https://docs.docker.com/compose/install/) (Only Linux)
 
 ## Container settings
 
@@ -13,7 +14,9 @@
 
 - Clone repository: `git clone https://github.com/cristhianforerod/oracle-18c-xe.git`
 - `cd oracle-18c-xe`
-- Execute `./install.sh`
+- Execute:
+  - Linux: `./install.sh`
+  - Windows `./install_windows.ps1`
 
 ### Available commands
 
@@ -65,5 +68,7 @@ https://localhost:35518/em
 
 ### Uninstall Container
 
-Execute `./uninstall.sh`
+Execute:
+  - Linux: `./uninstall.sh`
+  - Windows `./uninstall_windows.ps1`
 
