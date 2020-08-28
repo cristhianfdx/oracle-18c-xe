@@ -17,8 +17,14 @@
 
 ### Available commands
 
+**Linux**
 - Run container: `oraclestart`
 - Stop container: `oraclestop`
+- Run sqlplus: `sqlplus`
+
+**Windows**
+- Run container: `docker start oracledb`
+- Stop container: `docker stop oracledb`
 - Run sqlplus: `sqlplus`
 
 ### SQL
