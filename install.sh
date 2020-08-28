@@ -12,7 +12,7 @@ installer_file="oracle-database-xe-18c-1.0-1.x86_64.rpm"
 if [ ! -d "~/docker-services" ]; then
     mkdir -p ~/docker-services/oracle/18c-xe
     sudo apt install wget unzip -y
-    wget https://www.dropbox.com/s/d1lcv1oaykzxxev/sqlcl.zip?dl=0 -O sqlcl.zip
+    wget https://github.com/cristhianforerod/resources/raw/master/oracle/sqlcl.zip -O sqlcl.zip
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
