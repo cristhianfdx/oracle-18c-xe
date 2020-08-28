@@ -33,15 +33,6 @@
 - Stop container: `docker stop oracledb`
 - Run sqlplus: `sqlplus`
 
-### SQL
-
--- Connect to CDB
-`sqlplus sys/mypassword@localhost:1521/XE as sysdba`
-
-
--- Connect to default PDB
-`sqlplus sys/mypassword@localhost:1521/XEPDB1 as sysdba`
-
 ### APEX Install
 
 An example to install APEX into the default container is available [here](docs/apex-install.md).
@@ -54,9 +45,7 @@ In some cases you may need to login to the server to modify or test something on
 docker exec -it oracledb bash -c "source /home/oracle/.bashrc; bash"
 
 # Once connected to run sqlplus:
-$ORACLE_HOME/bin/sqlplus sys/mypassword@localhost/XE as sysdba
-$ORACLE_HOME/bin/sqlplus sys/mypassword@localhost/XEPDB1 as sysdba
-
+$ORACLE_HOME/bin/sqlplus
 
 # Listener start/stop
 $ORACLE_HOME/bin/lsnrctl stop
