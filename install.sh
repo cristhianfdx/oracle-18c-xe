@@ -18,10 +18,7 @@ if [ ! -d "~/docker-services" ]; then
     rm -rf sqlcl.zip
 
     cat aliases >> ~/.bashrc
-
-    if [ -f "~/.zshrc" ]; then
-        cat aliases >> ~/.zshrc
-    fi
+    cat aliases >> ~/.zshrc    
 fi
 
 if [ ! -d $downloads_folder ]; then
