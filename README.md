@@ -54,8 +54,8 @@ In some cases you may need to login to the server to modify or test something on
 docker exec -it oracledb bash -c "source /home/oracle/.bashrc; bash"
 
 # Once connected to run sqlplus:
-$ORACLE_HOME/bin/sqlplus sys/7tXvhyoRXEtZnDGF@localhost/XE as sysdba
-$ORACLE_HOME/bin/sqlplus sys/7tXvhyoRXEtZnDGF@localhost/XEPDB1 as sysdba
+$ORACLE_HOME/bin/sqlplus sys/mypassword@localhost/XE as sysdba
+$ORACLE_HOME/bin/sqlplus sys/mypassword@localhost/XEPDB1 as sysdba
 
 
 # Listener start/stop
