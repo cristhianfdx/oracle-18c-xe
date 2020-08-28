@@ -19,7 +19,7 @@
 - `cd oracle-18c-xe`
 - Execute:
   - Linux: `./install.sh`
-  - Windows `./install_windows.ps1` (**Windows Powershell**)
+  - Windows `./install_windows.ps1` (** Use Windows Powershell**)
 
 ### Available commands
 
