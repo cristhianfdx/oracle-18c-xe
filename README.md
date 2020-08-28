@@ -36,11 +36,11 @@
 ### SQL
 
 -- Connect to CDB
-`sqlplus sys/7tXvhyoRXEtZnDGF@localhost:1521/XE as sysdba`
+`sqlplus sys/mypassword@localhost:1521/XE as sysdba`
 
 
 -- Connect to default PDB
-`sqlplus sys/7tXvhyoRXEtZnDGF@localhost:1521/XEPDB1 as sysdba`
+`sqlplus sys/mypassword@localhost:1521/XEPDB1 as sysdba`
 
 ### APEX Install
 
