@@ -6,7 +6,7 @@ $InstallerFile = 'oracle-database-xe-18c-1.0-1.x86_64.rpm'
 
 if (-not (Test-Path C:\docker-services -PathType Any)) {
     New-Item -Path 'C:\docker-services\oracle\18c-xe' -ItemType Directory
-    Invoke-WebRequest -Uri https://github.com/cristhianforerod/resources/raw/master/oracle/sqlcl.zip -OutFile sqlcl.zip
+    Invoke-WebRequest -Uri https://github.com/cristhianfdx/resources/raw/master/oracle/sqlcl.zip -OutFile sqlcl.zip
     Expand-Archive -LiteralPath $pwd\sqlcl.zip -DestinationPath C:\docker-services\oracle\sqlcl
     Remove-Item sqlcl.zip
 
