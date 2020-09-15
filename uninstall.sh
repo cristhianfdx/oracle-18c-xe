@@ -1,4 +1,4 @@
-docker stop $(docker ps -a -q)
+docker stop oracledb
 docker rm oracledb
 
 sudo rm -rf ~/docker-services
