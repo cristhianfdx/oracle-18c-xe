@@ -2,33 +2,74 @@
 # Program to install Oracle Database services with docker
 # Author: Cristhian Forero
 
-echo "-------------------------------"
-echo "Oracle 18c-XE DATABASE INSTALL"
-echo "-------------------------------"
-
-downloads_folder="~/Downloads"
-installer_file="oracle-database-xe-18c-1.0-1.x86_64.rpm"
-
-if [ ! -d "~/docker-services" ]; then
-    mkdir -p ~/docker-services/oracle/18c-xe
+install () {
+    mkdir -p ~/docker-services/oracle/18c
+    sudo cp -r * ~/docker-services/oracle
     sudo apt install wget unzip -y
     wget https://github.com/cristhianfdx/resources/raw/master/oracle/sqlcl.zip -O sqlcl.zip
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
-
     cat aliases >> ~/.bashrc
-    cat aliases >> ~/.zshrc    
-fi
+    cat aliases >> ~/.zshrc
 
-if [ ! -d $downloads_folder ]; then
-    downloads_folder = "~/Descargas"
-fi
+    read -p "Please, insert your database passwords [SYS, SYSTEM, PDB_ADMIN]: " oraclepwd
+    touch .env
+    echo "ORACLE_PASSWORD=$oraclepwd" >> .env
+    docker-compose --env-file .env up -d --build
+    docker-compose logs -f
+}
 
-if [ ! -f $PWD/18c-xe/files/$installer_file ]; then
-    mv $downloads_folder/$installer_file $PWD/18c-xe/files/
-fi
+uninstall () {
+    docker stop oracledb
+    docker rm oracledb
+    rm .env
+    sudo rm -rf ~/docker-services
+    unalias oracle
+    echo "Uninstalling..."
+    sleep 2
+}
 
-docker-compose up -d --build
+runSqlplus () {
+    docker exec -it oracledb sh -c "/opt/oracle/product/18c/dbhomeXE/bin/sqlplus"
+}
 
-docker-compose logs -f
+while :
+do
+    clear
+
+    echo "----------------------------"
+    echo "| ORACLE DATABASE 18C XE   |"
+    echo "----------------------------"
+    echo "|        MENU              |"
+    echo "----------------------------"
+    echo "1. Install Database"
+    echo "2. Uninstall Database"
+    echo "3. SQLPLUS"
+    echo "4. Exit"
+
+    echo "\nSelect option [1-4]: " && read option
+
+    case $option in
+        1)
+            install
+            sleep 3
+            ;;
+        2)
+            uninstall
+            ;;
+        3)
+            runSqlplus
+            ;;
+        4)
+            echo "\nExited..."
+            sleep 1
+            exit 0
+            ;;
+        *)
+            echo "\nInvalid option"
+            echo "\nTry again.."
+            sleep 1
+            ;;
+    esac
+done
