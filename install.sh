@@ -3,6 +3,10 @@
 # Author: Cristhian Forero
 
 install () {
+    if [ -d ~/docker-services ]; then
+        echo "Oracle Database is already install."
+        return
+    fi
     mkdir -p ~/docker-services/oracle/18c
     sudo cp -r * ~/docker-services/oracle
     sudo apt install wget unzip -y
@@ -32,6 +36,7 @@ uninstall () {
 
 runSqlplus () {
     docker exec -it oracledb sh -c "/opt/oracle/product/18c/dbhomeXE/bin/sqlplus"
+    break
 }
 
 while :
@@ -46,7 +51,9 @@ do
     echo "1. Install Database"
     echo "2. Uninstall Database"
     echo "3. SQLPLUS"
-    echo "4. Exit"
+    echo "4. Start Database"
+    echo "5. Stop Database"
+    echo "6. Exit"
 
     echo "\nSelect option [1-4]: " && read option
 
@@ -62,6 +69,18 @@ do
             runSqlplus
             ;;
         4)
+            docker start oracledb
+            sleep 1
+            echo "Oracle service started..."
+            sleep 1
+            ;;
+        5)
+            docker stop oracledb
+            sleep 1
+            echo "Oracle service stopped..."
+            sleep 1
+            ;;
+        6)
             echo "\nExited..."
             sleep 1
             exit 0
