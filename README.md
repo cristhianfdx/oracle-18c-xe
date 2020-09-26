@@ -13,8 +13,8 @@
 - Clone repository: `git clone https://github.com/cristhianfdx/oracle-18c-xe.git`
 - `cd oracle-18c-xe`
 - Execute:
-  - Linux: `./install.sh`
-  - Windows `./install_windows.ps1` (**Use Windows Powershell**)
+  - Linux: `./oracle.sh`
+  - Windows `./oracle.ps1` (**Use Windows Powershell**) then restart system
 
 ### Available commands
 
