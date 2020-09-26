@@ -9,10 +9,10 @@ install () {
     fi
     mkdir -p ~/docker-services/oracle/18c
     sudo apt install wget unzip -y
-    wget https://github.com/cristhianfdx/resources/raw/master/oracle/sqlcl.zip -O sqlcl.zip
-    unzip sqlcl.zip
-    mv sqlcl ~/docker-services/oracle/
-    rm -rf sqlcl.zip
+    wget https://gitlab.com/cristhianfdx/resources/-/raw/master/oracle-database-xe-18c-1.0-1.x86_64.rpm -O oracle-database-xe-18c-1.0-1.x86_64.rpm
+    mv oracle-database-xe-18c-1.0-1.x86_64.rpm $PWD/18c/files
+    docker build -t cristhianfdx/oracle18c-xe $PWD/18c
+    rm $PWD/18c/files/oracle-database-xe-18c-1.0-1.x86_64.rpm
     cat aliases >> ~/.bashrc
     cat aliases >> ~/.zshrc
 
