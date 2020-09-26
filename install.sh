@@ -8,12 +8,12 @@ install () {
         return
     fi
     mkdir -p ~/docker-services/oracle/18c
-    sudo cp -r * ~/docker-services/oracle
     sudo apt install wget unzip -y
     wget https://github.com/cristhianfdx/resources/raw/master/oracle/sqlcl.zip -O sqlcl.zip
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
+    sudo cp -r * ~/docker-services/oracle
     cat aliases >> ~/.bashrc
     cat aliases >> ~/.zshrc
 
