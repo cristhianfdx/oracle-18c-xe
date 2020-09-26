@@ -13,13 +13,15 @@ install () {
     unzip sqlcl.zip
     mv sqlcl ~/docker-services/oracle/
     rm -rf sqlcl.zip
-    sudo cp -r * ~/docker-services/oracle
     cat aliases >> ~/.bashrc
     cat aliases >> ~/.zshrc
 
     read -p "Please, insert your database passwords [SYS, SYSTEM, PDB_ADMIN]: " oraclepwd
     touch .env
     echo "ORACLE_PASSWORD=$oraclepwd" >> .env
+
+    sudo cp -r * ~/docker-services/oracle
+
     docker-compose --env-file .env up -d --build
     docker-compose logs -f
 }
